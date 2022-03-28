@@ -1,7 +1,7 @@
 class Calculator {
-    constructor(previousOperandTextElement, currentOperandTextElement){
-    this.previousOperandTextElement = previousOperandTextElement;
-    this.currentOperandTextElement = currentOperandTextElement;
+    constructor(prevOperTextElement, curOperTextElement){
+    this.prevOperTextElement = prevOperTextElement;
+    this.curOperTextElement = curOperTextElement;
     this.clear();
 }
 
@@ -76,12 +76,12 @@ class Calculator {
       }
 
     updateDisplay(){
-        this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand);
+        this.curOperTextElement.innerText = this.getDisplayNumber(this.currentOperand);
         if(this.operation != null){
-            this.previousOperandTextElement.innerText = 
-            `${this.getDisplayNumber(this.currentOperand)} ${this.operation}` 
+            this.prevOperTextElement.innerText = 
+            `${this.getDisplayNumber(this.previousOperand)} ${this.operation} ${this.currentOperand} `
         } else{
-            this.previousOperandTextElement.innerText = ''
+            this.prevOperTextElement.innerText = ''
         }
         
     }
